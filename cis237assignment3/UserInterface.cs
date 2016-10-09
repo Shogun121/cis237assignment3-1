@@ -51,7 +51,7 @@ namespace cis237assignment3
                         Console.WriteLine("You have selected Option 2");
                         GetMainInput();
                         break;
-                    default: //Exit the system.
+                    case "3": //Exit the system.
                         Console.WriteLine("Thank you for using the Droid Management System.");
                         break;
                 }   
