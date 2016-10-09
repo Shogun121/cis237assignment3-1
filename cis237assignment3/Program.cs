@@ -17,8 +17,8 @@ namespace cis237assignment3
             UserInterface uI = new UserInterface();
 
             //Run
-            uI.PrintMain();
-            uI.GetInput();
+            uI.MainMenuRun();
+            
             
         }
     }
