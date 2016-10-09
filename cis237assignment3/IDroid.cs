@@ -13,6 +13,6 @@ namespace cis237assignment3
         abstract void CalculateTotalCost();
 
         //property that msut be used in derived classses.
-        decimal TotalCost { get; set; }
+        protected decimal TotalCost { get; set; }
     }
 }
