@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Droid :IDroid
+    abstract class  Droid : IDroid
     {
         //------------------------------------
         //Backing Fields
@@ -42,22 +42,29 @@ namespace cis237assignment3
         /// <summary>
         /// method used to Calculate Total Cost of the Droid(s).
         /// </summary>
-        override void CalculateTotalCost()
-        {
+        public abstract void CalculateTotalCost();
 
-        }
+        /// <summary>
+        /// A method to calculate the lowest possible cost of a droid.
+        /// </summary>
+        /// <param name="Model"></param>
+        /// <param name="Material"></param>
+        /// <param name="Color"></param>
+        public virtual void CalculateBaseCost(string Model,string Material,string Color){}
         /// <summary>
         /// Method used to print the total cost to the console of the droid.
         /// </summary>
-        /// <returns></returns>
-        protected override string ToString()
+        /// <returns>A formatted string of Model, Material, and Color.</returns>
+        public override string ToString()
         {
-            return base.ToString();
+            return "Model:" + this._model + Environment.NewLine +
+                    "Material:" + this._material + Environment.NewLine +
+                    "Color:" + this._color;
         }
         //------------------------------------
         //Properties
         //------------------------------------
-        protected decimal TotalCost
+        public decimal TotalCost
         {
             get { return _totalCost; }
             set { _totalCost = value; }
