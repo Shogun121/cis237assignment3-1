@@ -21,6 +21,7 @@ namespace cis237assignment3
 
         protected decimal _baseCost;
         protected decimal _totalCost;
+
         //------------------------------------
         //Constructor
         //------------------------------------
@@ -36,13 +37,20 @@ namespace cis237assignment3
             _color = Color;
             _material = Material;
         }
+        public Droid()
+        {
+
+        }
         //------------------------------------
         //Methods
         //------------------------------------
         /// <summary>
         /// method used to Calculate Total Cost of the Droid(s).
         /// </summary>
-        public abstract void CalculateTotalCost();
+        public virtual  void CalculateTotalCost()
+        {
+            _baseCost = _totalCost;
+        }
 
         /// <summary>
         /// A method to calculate the lowest possible cost of a droid.
@@ -51,15 +59,16 @@ namespace cis237assignment3
         /// <param name="Material"></param>
         /// <param name="Color"></param>
         public virtual void CalculateBaseCost(string Model,string Material,string Color){}
+
         /// <summary>
         /// Method used to print the total cost to the console of the droid.
         /// </summary>
         /// <returns>A formatted string of Model, Material, and Color.</returns>
         public override string ToString()
         {
-            return "Model:" + this._model + Environment.NewLine +
-                    "Material:" + this._material + Environment.NewLine +
-                    "Color:" + this._color;
+            return "Model: " + this._model + Environment.NewLine +
+                    "Material: " + this._material + Environment.NewLine +
+                    "Color: " + this._color;
         }
         //------------------------------------
         //Properties
