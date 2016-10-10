@@ -47,9 +47,9 @@ namespace cis237assignment3
         /// <summary>
         /// method used to Calculate Total Cost of the Droid(s).
         /// </summary>
-        public virtual  void CalculateTotalCost()
+        public virtual  decimal CalculateTotalCost()
         {
-            _baseCost = _totalCost;
+           return  _baseCost = _totalCost;
         }
 
         /// <summary>
