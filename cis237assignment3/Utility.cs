@@ -15,17 +15,17 @@ namespace cis237assignment3
         //Backing Fields
         //-------------------
         //utility droid features
-        bool _toolBox;
-        bool _computerConnection;
-        bool _arm;
+        protected bool _toolBox;
+        protected bool _computerConnection;
+        protected bool _arm;
 
         //feature prices
-        const decimal toolboxCost=150m;
-        const decimal computerConnectionCost = 300m;
-        const decimal armCost = 400m;
+        protected const decimal toolboxCost=150m;
+        protected const decimal computerConnectionCost = 300m;
+        protected const decimal armCost = 400m;
 
         //utility droid feature accumulator
-        decimal utilityAccum;
+        protected decimal utilityAccum;
         //-------------------
         //Constructors
         //-------------------

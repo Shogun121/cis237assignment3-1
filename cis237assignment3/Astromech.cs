@@ -14,13 +14,13 @@ namespace cis237assignment3
         //-----------------
         //Backing Fields
         //-----------------
-        bool _fireExtinguisher;
-        int _numberOfShips;
+        protected bool _fireExtinguisher;
+        protected int _numberOfShips;
 
-        decimal astromechAccum;
+        protected decimal astromechAccum;
 
-        const decimal costOfExtinguisher = 200m;
-        const decimal costPerShip = 120m;
+        protected const decimal costOfExtinguisher = 200m;
+        protected const decimal costPerShip = 120m;
         //-----------------
         //Constructor
         //-----------------

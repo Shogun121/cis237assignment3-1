@@ -14,8 +14,9 @@ namespace cis237assignment3
         //-----------------------
         //Backing Fields
         //-----------------------
-        string userInput;
-        bool droidTypeValidation;
+
+        string userInput;                             //used to access Input property for User Input
+        bool droidTypeValidation;                     //Bool used for data validation test.
         //-----------------------
         //Methods
         //-----------------------
@@ -46,7 +47,7 @@ namespace cis237assignment3
                 {
                     case "1": 
                         //Print the droid list.
-                        Console.WriteLine("You have selected Option 1");
+                        Console.WriteLine("You have selected 'Print the Droid List'");
                         GetMainInput();
                         break;
                     case "2": 
@@ -113,7 +114,7 @@ namespace cis237assignment3
             GetMainInput();
             while(userInput!="3")
             {               
-                //Use input to select a menu option, and continue until "3" is chose to exit.
+                //Use input to select a menu option, and continue until "3" is choosen to exit.
                 MenuChoice();
             }
             

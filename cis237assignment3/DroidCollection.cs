@@ -11,6 +11,8 @@ namespace cis237assignment3
 {   //class used to store the droid array and perform various tasks on it.
     class DroidCollection
     {
+        //class instantiation.
+        UserInterface uI=new UserInterface();
         //----------
         //Backing Fields
         //----------

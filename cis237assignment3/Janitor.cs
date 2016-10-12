@@ -14,15 +14,15 @@ namespace cis237assignment3
         //------------------
         //Backing Fields
         //------------------
-        bool _trashCompactor;
-        bool _vacuum;
+        protected bool _trashCompactor;
+        protected bool _vacuum;
 
-        const decimal costPerShip = 600m;
-        const decimal compactorCost = 350m;
-        const decimal vacuumCost = 150m;
-        int numberOfShips=1;
+        protected const decimal costPerShip = 600m;
+        protected const decimal compactorCost = 350m;
+        protected const decimal vacuumCost = 150m;
+        protected int numberOfShips = 1;
 
-        decimal janitorAccum;
+        protected decimal janitorAccum;
         //------------------
         //Constructor
         //------------------

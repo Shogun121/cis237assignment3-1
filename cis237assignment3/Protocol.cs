@@ -14,8 +14,8 @@ namespace cis237assignment3
         //-------------------
         //Backing Fields
         //-------------------
-        int _numberLanguages;
-        const decimal costPerLangauge=100m;
+        protected int _numberLanguages;
+        protected const decimal costPerLangauge=100m;
 
         //-------------------
         //Constructor
@@ -47,7 +47,7 @@ namespace cis237assignment3
                     "Number of Languages: " + _numberLanguages;
         }
         //-------------------
-        //Proeprties
+        //Properties
         //-------------------
     }
 }
