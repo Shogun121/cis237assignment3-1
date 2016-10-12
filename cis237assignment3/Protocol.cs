@@ -35,10 +35,11 @@ namespace cis237assignment3
         /// <summary>
         /// Method used to calculate total cost for droid(s).
         /// </summary>
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
             _totalCost = _numberLanguages * costPerLangauge;
-            return base.CalculateTotalCost() + _totalCost;
+            TotalCost += _baseCost;
+            //return base.CalculateTotalCost() + _totalCost;
         }
         public override string ToString()
         {

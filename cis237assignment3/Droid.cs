@@ -15,8 +15,8 @@ namespace cis237assignment3
         //Backing Fields
         //------------------------------------    
         //Constructor variables
-        protected string _material;
         protected string _model;
+        protected string _material;       
         protected string _color;
 
         protected decimal _baseCost;
@@ -31,11 +31,11 @@ namespace cis237assignment3
         /// <param name="Model"></param>
         /// <param name="Color"></param>
         /// <param name="Material"></param>
-        public Droid(string Model, string Color, string Material)
+        public Droid(string Model, string Material,string Color)
         {
-            _model = Model;
-            _color = Color;
+            _model = Model;        
             _material = Material;
+            _color = Color;
         }
         public Droid()
         {
@@ -47,9 +47,10 @@ namespace cis237assignment3
         /// <summary>
         /// method used to Calculate Total Cost of the Droid(s).
         /// </summary>
-        public virtual  decimal CalculateTotalCost()
+        public virtual  void CalculateTotalCost()
         {
-           return  _baseCost = _totalCost;
+            TotalCost += _baseCost;
+           //return  _baseCost = _totalCost;
         }
 
         /// <summary>

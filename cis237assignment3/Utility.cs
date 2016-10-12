@@ -58,7 +58,7 @@ namespace cis237assignment3
         /// Method used to calc tot cost of utility droid features and rolls it into the total.
         /// </summary>
         /// <returns></returns>
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
             if(_toolBox==true)
             {
@@ -72,7 +72,8 @@ namespace cis237assignment3
             {
                 utilityAccum += armCost;
             }
-            return base.CalculateTotalCost()+utilityAccum;
+            TotalCost += _baseCost;
+            //return base.CalculateTotalCost()+utilityAccum;
         }
         //-------------------
         //Properties

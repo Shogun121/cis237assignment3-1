@@ -46,7 +46,7 @@ namespace cis237assignment3
                 "Trash Compactor: " + _trashCompactor + Environment.NewLine +
                 "Vacuum: " + _vacuum;
         }
-        public override decimal CalculateTotalCost()
+        public override void CalculateTotalCost()
         {
             if(_trashCompactor==true)
             {
@@ -59,7 +59,8 @@ namespace cis237assignment3
             //number of ships HAS to be at least 1.
             janitorAccum += costPerShip * numberOfShips;
 
-            return base.CalculateTotalCost()+janitorAccum;
+            TotalCost += _baseCost;
+            //return base.CalculateTotalCost()+janitorAccum;
         }
         //------------------
         //Properties
