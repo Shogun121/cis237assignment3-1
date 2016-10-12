@@ -11,6 +11,8 @@ namespace cis237assignment3
 {
     class UserInterface
     {   
+        //class instantiation.
+        DroidCollection myDroidCollection = new DroidCollection();
         //-----------------------
         //Backing Fields
         //-----------------------
@@ -166,13 +168,21 @@ namespace cis237assignment3
         {
             switch(Input)
             {
-                case "protocol"://call CreateProtocolDroid()
+                case "protocol":
+                //call CreateProtocolDroid()
+                    myDroidCollection.CreateProtocolDroid();
                     break;
-                case "utility"://call CreateUtilityDroid()
+                case "utility":
+                //call CreateUtilityDroid()
+                    myDroidCollection.CreateUtilityDroid();
                     break;
-                case "janitor"://call CreateJanitorDroid()
+                case "janitor":
+                //call CreateJanitorDroid()
+                    myDroidCollection.CreateJanitorDroid();
                     break;
-                case "astromech"://call CreateAstromechDroid()
+                case "astromech":
+                //call CreateAstromechDroid()
+                    myDroidCollection.CreateAstromechDroid();
                     break;
             }
         }

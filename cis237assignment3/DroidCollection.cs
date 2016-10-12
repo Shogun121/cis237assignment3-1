@@ -24,7 +24,22 @@ namespace cis237assignment3
         //----------
         //Methods
         //----------
-
+        public object CreateProtocolDroid()
+        {
+            return;
+        }
+        public object CreateUtilityDroid()
+        {
+            return;
+        }
+        public object CreateJanitorDroid()
+        {
+            return;
+        }
+        public object CreateAstromechDroid()
+        {
+            return;
+        }
         //----------
         //Properties
         //----------
