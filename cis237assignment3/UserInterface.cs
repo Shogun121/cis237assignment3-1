@@ -58,7 +58,9 @@ namespace cis237assignment3
                         GetDroidType();
 
                         //Allow the user to continue making deicisions.
+                        ClearConsole();            
                         Console.WriteLine("What would you like to do now?");
+                        PrintMain();
                         GetMainInput();
                         break;
                     case "3": 
@@ -157,8 +159,7 @@ namespace cis237assignment3
                     //Method call to inform the user that the input is invalid.
                     InvalidDroidType();
                 }
-            }
-            
+            }            
         }
         /// <summary>
         /// method used to switch through the droid types to 
@@ -194,6 +195,65 @@ namespace cis237assignment3
             Console.WriteLine();
             Console.WriteLine("The droid type '{0}' is not valid.",Input);
             Console.WriteLine("Please enter a valid droid type.");
+        }
+        public void UiHandlingCreateProtocolDroid()
+        {
+            bool ValidProtocolInput = false;
+            while(!ValidProtocolInput)
+            {
+                try
+                {
+                    Console.WriteLine("What material will the protocol Droid be made of?");
+                    Console.WriteLine("1) Fragillium--------200");
+                    Console.WriteLine("2) Okium--------300");
+                    Console.WriteLine("3) Durium--------500");
+                    Console.WriteLine("4) Cosmosium--------1,000");
+
+                    //Read Line to variable to store it, and price
+                    //if(input==1 &&input==2 &&input==3 &&input==4)
+                    //{
+                        //return the cost of the material.
+                    //}
+                    try
+                    {
+                        Console.WriteLine("What color will the protocol Droid be?");
+                        Console.WriteLine("1) White--------250");
+                        Console.WriteLine("2) Black--------250");
+
+                        //Read Line to variable to store it, and price
+                        //if(input==1 &&input==2)
+                        //{
+                        //return the cost of the color..
+                        //}
+                        try
+                        {
+                            Console.WriteLine("How many languages do you want the Protocol Droid to have?");
+
+                            //Read Line to variable to store it, and price
+                            //if(input==aNumber)
+                            //{
+                            //  if(input>1 )
+                            //{
+                            //      return the number.
+                            //}
+                            //return the cost of the color..
+                            //}
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                catch
+                {
+
+                }
+            }
         }
         //-----------------------
         //Properties
