@@ -10,15 +10,22 @@ using System.Threading.Tasks;
 namespace cis237assignment3
 {
     class UserInterface
-    {   
+    {
         //class instantiation.
-        DroidCollection myDroidCollection = new DroidCollection();
+        DroidCollection myDroidCollection;
         //-----------------------
         //Backing Fields
         //-----------------------
 
         string userInput;                             //used to access Input property for User Input
         bool droidTypeValidation;                     //Bool used for data validation test.
+        //-----------------------
+        //Constructor
+        //-----------------------
+        public UserInterface()
+        {
+           new DroidCollection(this);
+        }
         //-----------------------
         //Methods
         //-----------------------
@@ -196,6 +203,33 @@ namespace cis237assignment3
             Console.WriteLine("The droid type '{0}' is not valid.",Input);
             Console.WriteLine("Please enter a valid droid type.");
         }
+        /// <summary>
+        /// Method used to report incorrect droid material.
+        /// </summary>
+        public void InvalidDroidMaterial()
+        {
+            Console.WriteLine();
+            Console.WriteLine("The droid material '{0}' is not valid.", Input);
+            Console.WriteLine("Please enter a valid droid {0}.","material");
+        }
+        /// <summary>
+        /// Method used to report incorrect droid color.
+        /// </summary>
+        public void InvalidDroidColor()
+        {
+            Console.WriteLine();
+            Console.WriteLine("The droid color '{0}' is not valid.", Input);
+            Console.WriteLine("Please enter a valid droid {0}.", "color");
+        }
+        /// <summary>
+        /// Method used to report incorrect droid number of languages.
+        /// </summary>
+        public void InvalidDroidNumberOfLanguages()
+        {
+            Console.WriteLine();
+            Console.WriteLine("The droid Number of Languages '{0}' is not valid.", Input);
+            Console.WriteLine("Please enter a valid number for {0}.", "Number of Languages");
+        }
         public void UiHandlingCreateProtocolDroid()
         {
             bool ValidProtocolInput = false;
@@ -241,18 +275,19 @@ namespace cis237assignment3
                         }
                         catch
                         {
-
+                            InvalidDroidNumberOfLanguages();
                         }
                     }
                     catch
                     {
-
+                        InvalidDroidColor();
                     }
                 }
                 catch
                 {
-
+                    InvalidDroidMaterial();
                 }
+                ValidProtocolInput = true;
             }
         }
         //-----------------------

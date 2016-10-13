@@ -12,7 +12,7 @@ namespace cis237assignment3
     class DroidCollection
     {
         //class instantiation.
-        UserInterface uI=new UserInterface();
+        UserInterface uI= new UserInterface();
         //----------
         //Backing Fields
         //----------
@@ -20,7 +20,10 @@ namespace cis237assignment3
         //----------
         //Constructor
         //----------
-
+        public DroidCollection(UserInterface uI)
+        {
+            uI = this.uI;
+        }
         //----------
         //Methods
         //----------
