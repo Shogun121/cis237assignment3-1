@@ -22,11 +22,11 @@ namespace cis237assignment3
         //-----------------------
         //Constructor
         //-----------------------
-        public UserInterface()
-        {
-           new DroidCollection(this);
-        }
-        //-----------------------
+        //public UserInterface()
+        //{
+        //   new DroidCollection(this);
+        //}
+        ////-----------------------
         //Methods
         //-----------------------
         /// <summary>
@@ -48,40 +48,11 @@ namespace cis237assignment3
             Console.WriteLine();
         }
         /// <summary>
-        /// A method taking in the user input and switches into the choice.
-        /// </summary>
-        public void MenuChoice()
-        {   
-                switch (userInput)
-                {
-                    case "1": 
-                        //Print the droid list.
-                        Console.WriteLine("You have selected 'Print the Droid List'");
-                        GetMainInput();
-                        break;
-                    case "2": 
-                        //Add a Droid to the list.
-                        Console.WriteLine("You have selected 'Add a Droid'");
-                        GetDroidType();
-
-                        //Allow the user to continue making deicisions.
-                        ClearConsole();            
-                        Console.WriteLine("What would you like to do now?");
-                        PrintMain();
-                        GetMainInput();
-                        break;
-                    case "3": 
-                        //Exit the system.
-                        Console.WriteLine("Thank you for using the Droid Management System.");
-                        break;
-                }   
-        }
-        /// <summary>
         /// A method used to acquire User Input and validates it.
         /// </summary>
-        public void GetMainInput()
+        public string GetMainInput()
         {
-            userInput = Console.ReadLine();
+            Input = Console.ReadLine();
 
             while(userInput!="1" && userInput!="2" && userInput!="3")
             {
@@ -100,7 +71,7 @@ namespace cis237assignment3
                 //Reprint menu.
                 PrintMain(); 
             }
-            
+            return Input;          
         }
         /// <summary>
         /// Method for catching bad input at main menu.
@@ -115,22 +86,6 @@ namespace cis237assignment3
             Console.WriteLine();     
         }
         /// <summary>
-        /// A method used to run the UI cleanly.
-        /// </summary>
-        public void MainMenuRun()
-        {
-            //Prints main menu
-            PrintMain();
-            //Acquires input for main menu.
-            GetMainInput();
-            while(userInput!="3")
-            {               
-                //Use input to select a menu option, and continue until "3" is choosen to exit.
-                MenuChoice();
-            }
-            
-        }
-        /// <summary>
         /// A method used to clear the console.
         /// </summary>
         public void ClearConsole()
@@ -140,7 +95,7 @@ namespace cis237assignment3
         /// <summary>
         /// Method used to acquire user input to determine what droid type to create.
         /// </summary>
-        public void GetDroidType()
+        public string GetDroidType()
         {   //delcare bool as false to validate.
             droidTypeValidation = false;
 
@@ -156,44 +111,24 @@ namespace cis237assignment3
                         && Input.ToLower() == "janitor" && Input.ToLower() == "astromech")
                     {
                         //If 'Input' matches one of the droid types the switcher is called.
-                        CreateDroid();
+                        userInput = Input;                       
                     }
                     //Data has been validated, bool is set to true.
-                    droidTypeValidation = true;
+                    droidTypeValidation = true;                   
                 }
                 catch
                 {
                     //Method call to inform the user that the input is invalid.
                     InvalidDroidType();
-                }
-            }            
+                }              
+            }
+            return userInput;
         }
         /// <summary>
         /// method used to switch through the droid types to 
         /// correctly prompt the user to create a droid.
         /// </summary>
-        public void CreateDroid()
-        {
-            switch(Input)
-            {
-                case "protocol":
-                //call CreateProtocolDroid()
-                    myDroidCollection.CreateProtocolDroid();
-                    break;
-                case "utility":
-                //call CreateUtilityDroid()
-                    myDroidCollection.CreateUtilityDroid();
-                    break;
-                case "janitor":
-                //call CreateJanitorDroid()
-                    myDroidCollection.CreateJanitorDroid();
-                    break;
-                case "astromech":
-                //call CreateAstromechDroid()
-                    myDroidCollection.CreateAstromechDroid();
-                    break;
-            }
-        }
+        
         /// <summary>
         /// method used to report incorrect droid types.
         /// </summary>
@@ -230,7 +165,7 @@ namespace cis237assignment3
             Console.WriteLine("The droid Number of Languages '{0}' is not valid.", Input);
             Console.WriteLine("Please enter a valid number for {0}.", "Number of Languages");
         }
-        public void UiHandlingCreateProtocolDroid()
+        public string[] UiHandlingCreateProtocolDroid()
         {
             bool ValidProtocolInput = false;
             while(!ValidProtocolInput)
@@ -244,10 +179,10 @@ namespace cis237assignment3
                     Console.WriteLine("4) Cosmosium--------1,000");
 
                     //Read Line to variable to store it, and price
-                    //if(input==1 &&input==2 &&input==3 &&input==4)
-                    //{
-                        //return the cost of the material.
-                    //}
+                    if(input==1 &&input==2 &&input==3 &&input==4)
+                    {
+                        return the cost of the material.
+                    }
                     try
                     {
                         Console.WriteLine("What color will the protocol Droid be?");

@@ -15,11 +15,65 @@ namespace cis237assignment3
         {
             //class instantiations
             UserInterface uI = new UserInterface();
+            DroidCollection DCollection = new DroidCollection();
+            Utility UDroid = new Utility();
+            Janitor JDroid = new Janitor();
+            Protocol PDroid = new Protocol();
+            Astromech ADroid = new Astromech();
 
-            //Run
-            uI.MainMenuRun();
-            
-            
+            string choice=uI.GetMainInput();
+
+            //Prints main menu
+            uI.PrintMain();
+            //Acquires input for main menu.
+            uI.GetMainInput();
+            //Switch statement for menu choices.
+            while(choice!="3")
+            {
+                switch (choice)
+                {
+                    case "1":
+                        //Print the droid list.
+                        Console.WriteLine("You have selected 'Print the Droid List'");
+                        uI.GetMainInput();
+                        break;
+                    case "2":
+                        //Add a Droid to the list.
+                        Console.WriteLine("You have selected 'Add a Droid'");
+                        uI.GetDroidType();
+
+                        //Allow the user to continue making deicisions.
+                        uI.ClearConsole();
+                        Console.WriteLine("What would you like to do now?");
+                        uI.PrintMain();
+                        uI.GetMainInput();
+                        break;
+                    case "3":
+                        //Exit the system.
+                        Console.WriteLine("Thank you for using the Droid Management System.");
+                        break;
+                }
+            }
+            choice = uI.GetDroidType();
+            switch(choice)
+            {
+                case "protocol":
+                //call CreateProtocolDroid()
+                    DCollection.CreateProtocolDroid();
+                    break;
+                case "utility":
+                //call CreateUtilityDroid()
+                    DCollection.CreateUtilityDroid();
+                    break;
+                case "janitor":
+                //call CreateJanitorDroid()
+                    DCollection.CreateJanitorDroid();
+                    break;
+                case "astromech":
+                //call CreateAstromechDroid()
+                    DCollection.CreateAstromechDroid();
+                    break;
+            }
         }
     }
 }

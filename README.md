@@ -114,7 +114,7 @@ It may be beneficial for you to create extra methods within the droid sub classe
 | Total                      | 100    |
 
 ## Outside Resources Used
-CUrrently None
+http://stackoverflow.com/questions/748062/how-can-i-return-multiple-values-from-a-function-in-c //Multiple returns.
 
 
 ## Known Problems, Issues, And/Or Errors in the Program

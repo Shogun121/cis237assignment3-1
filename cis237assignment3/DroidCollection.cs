@@ -20,28 +20,24 @@ namespace cis237assignment3
         //----------
         //Constructor
         //----------
-        public DroidCollection(UserInterface uI)
-        {
-            uI = this.uI;
-        }
+        //public DroidCollection(UserInterface uI)
+        //{
+        //    uI = this.uI;
+        //}
         //----------
         //Methods
         //----------
-        public object CreateProtocolDroid()
+        public void CreateProtocolDroid()
         {
-            return;
         }
-        public object CreateUtilityDroid()
+        public void CreateUtilityDroid()
         {
-            return;
         }
-        public object CreateJanitorDroid()
+        public void CreateJanitorDroid()
         {
-            return;
         }
-        public object CreateAstromechDroid()
+        public void CreateAstromechDroid()
         {
-            return;
         }
         //----------
         //Properties
