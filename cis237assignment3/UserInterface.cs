@@ -167,6 +167,7 @@ namespace cis237assignment3
         }
         public string[] UiHandlingCreateProtocolDroid()
         {
+            string[] pDroid=new string[8];
             bool ValidProtocolInput = false;
             while(!ValidProtocolInput)
             {
@@ -178,27 +179,52 @@ namespace cis237assignment3
                     Console.WriteLine("3) Durium--------500");
                     Console.WriteLine("4) Cosmosium--------1,000");
 
-                    //Read Line to variable to store it, and price
-                    if(input==1 &&input==2 &&input==3 &&input==4)
+                    userInput=Console.ReadLine();
+
+                    if(userInput=="1")
                     {
-                        return the cost of the material.
+                        pDroid[0]="Fragillium";
+                        pDroid[1]="200";
                     }
+                    if (userInput == "2")
+                    {
+                        pDroid[0] = "Okium";
+                        pDroid[1] = "300";
+                    }
+                    if (userInput == "3")
+                    {
+                        pDroid[0] = "Durium";
+                        pDroid[1] = "500";
+                    }
+                    if(userInput=="4")
+                    {
+                        pDroid[0]="Cosmosium";
+                        pDroid[1]="1000";
+                    }
+                    
                     try
                     {
                         Console.WriteLine("What color will the protocol Droid be?");
                         Console.WriteLine("1) White--------250");
                         Console.WriteLine("2) Black--------250");
 
-                        //Read Line to variable to store it, and price
-                        //if(input==1 &&input==2)
-                        //{
-                        //return the cost of the color..
-                        //}
+                        userInput=Console.ReadLine();
+
+                        if(userInput=="1")
+                        {
+                            pDroid[2]="White";
+                            pDroid[3]="250";
+                        }
+                        if (userInput == "2")
+                        {
+                            pDroid[2] = "Black";
+                            pDroid[3] = "250";
+                        }
                         try
                         {
                             Console.WriteLine("How many languages do you want the Protocol Droid to have?");
 
-                            //Read Line to variable to store it, and price
+                            userInput = Console.ReadLine();
                             //if(input==aNumber)
                             //{
                             //  if(input>1 )
