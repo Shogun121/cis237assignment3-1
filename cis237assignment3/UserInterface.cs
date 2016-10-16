@@ -104,34 +104,27 @@ namespace cis237assignment3
             {
                 Console.WriteLine("Input the type of Droid you wish to create.");
                 Console.WriteLine("Your options are '{0}','{1}','{2}' or '{3}' ",
-                "Protocol","Utility","Janitor","Astromech");
+                                  "Protocol","Utility","Janitor","Astromech");
                 Console.WriteLine();
+
                 //Stores a line of input in the 'Input' property.
                 Input = Console.ReadLine();
-                try
+                
+                //Compares 'Input' to the droid types.
+                while(Input.ToLower() != "protocol" && Input.ToLower() != "utility"
+                   && Input.ToLower() != "janitor" && Input.ToLower() != "astromech")
                 {
-                    //Compares 'Input' to the droid types.
-                    while(Input.ToLower() != "protocol" && Input.ToLower() != "utility"
-                        && Input.ToLower() != "janitor" && Input.ToLower() != "astromech")
-                    {
-                        Input = Console.ReadLine();
-                    }
-                    userInput = Input;
-                    Console.WriteLine("Your input '{0}' passed", userInput);
-                    Console.WriteLine();
-                    droidTypeValidation = true; 
-                    //Data has been validated, bool is set to true.
-                                     
-                }                    
-                catch
-                {
-                    //Method call to inform the user that the input is invalid.
-                    InvalidDroidType();
-                }              
+                   //Method call to inform the user that the input is invalid.
+                   InvalidDroidType();
+                   Input = Console.ReadLine();
+                }
+                userInput = Input;
+                Console.WriteLine("Your input '{0}' passed", userInput);
+                Console.WriteLine();
+                droidTypeValidation = true; 
+                //Data has been validated, bool is set to true.                            
             }
             //If 'Input' matches one of the droid types the switcher is called.
-            
-            
             return userInput;
         }
         /// <summary>
@@ -147,6 +140,7 @@ namespace cis237assignment3
             Console.WriteLine();
             Console.WriteLine("The droid type '{0}' is not valid.",Input);
             Console.WriteLine("Please enter a valid droid type.");
+            Console.WriteLine();
         }
         /// <summary>
         /// Method used to report incorrect droid material.
