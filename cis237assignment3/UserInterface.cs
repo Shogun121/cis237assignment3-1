@@ -102,26 +102,36 @@ namespace cis237assignment3
             //loop while bool remains false.
             while(droidTypeValidation==false)
             {
+                Console.WriteLine("Input the type of Droid you wish to create.");
+                Console.WriteLine("Your options are '{0}','{1}','{2}' or '{3}' ",
+                "Protocol","Utility","Janitor","Astromech");
+                Console.WriteLine();
                 //Stores a line of input in the 'Input' property.
                 Input = Console.ReadLine();
                 try
                 {
                     //Compares 'Input' to the droid types.
-                    if(Input.ToLower() == "protocol" && Input.ToLower() == "utility"
-                        && Input.ToLower() == "janitor" && Input.ToLower() == "astromech")
+                    while(Input.ToLower() != "protocol" && Input.ToLower() != "utility"
+                        && Input.ToLower() != "janitor" && Input.ToLower() != "astromech")
                     {
-                        //If 'Input' matches one of the droid types the switcher is called.
-                        userInput = Input;                       
+                        Input = Console.ReadLine();
                     }
+                    userInput = Input;
+                    Console.WriteLine("Your input '{0}' passed", userInput);
+                    Console.WriteLine();
+                    droidTypeValidation = true; 
                     //Data has been validated, bool is set to true.
-                    droidTypeValidation = true;                   
-                }
+                                     
+                }                    
                 catch
                 {
                     //Method call to inform the user that the input is invalid.
                     InvalidDroidType();
                 }              
             }
+            //If 'Input' matches one of the droid types the switcher is called.
+            
+            
             return userInput;
         }
         /// <summary>

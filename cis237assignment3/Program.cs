@@ -44,7 +44,7 @@ namespace cis237assignment3
                         uI.GetDroidType();
 
                         //Allow the user to continue making deicisions.
-                        uI.ClearConsole();
+                        //uI.ClearConsole();
                         Console.WriteLine("What would you like to do now?");
                         uI.PrintMain();
                         uI.GetMainInput();
