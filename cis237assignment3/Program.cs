@@ -41,13 +41,29 @@ namespace cis237assignment3
                     case "2":
                         //Add a Droid to the list.
                         Console.WriteLine("You have selected 'Add a Droid'");
-                        uI.GetDroidType();
-
+                        choice = uI.GetDroidType().ToLower();
+                        switch (choice)
+                        {
+                            case "protocol":
+                                DCollection.CreateProtocolDroid();
+                                break;
+                            case "utility":
+                                //call CreateUtilityDroid()
+                                DCollection.CreateUtilityDroid();
+                                break;
+                            case "janitor":
+                                //call CreateJanitorDroid()
+                                DCollection.CreateJanitorDroid();
+                                break;
+                            case "astromech":
+                                //call CreateAstromechDroid()
+                                DCollection.CreateAstromechDroid();
+                                break;
+                        }
                         //Allow the user to continue making deicisions.
-                        //uI.ClearConsole();
                         Console.WriteLine("What would you like to do now?");
-                        uI.PrintMain();
-                        uI.GetMainInput();
+                        //uI.PrintMain();
+                        //uI.GetMainInput();
                         break;
                     case "3":
                         //Exit the system.
@@ -55,26 +71,8 @@ namespace cis237assignment3
                         break;
                 }
             }
-            choice = uI.GetDroidType();
-            switch(choice)
-            {
-                case "protocol":
-                //call CreateProtocolDroid()
-                    DCollection.CreateProtocolDroid();
-                    break;
-                case "utility":
-                //call CreateUtilityDroid()
-                    DCollection.CreateUtilityDroid();
-                    break;
-                case "janitor":
-                //call CreateJanitorDroid()
-                    DCollection.CreateJanitorDroid();
-                    break;
-                case "astromech":
-                //call CreateAstromechDroid()
-                    DCollection.CreateAstromechDroid();
-                    break;
-            }
+            
+            
         }
     }
 }

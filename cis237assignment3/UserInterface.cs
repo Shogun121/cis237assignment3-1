@@ -118,7 +118,7 @@ namespace cis237assignment3
                    InvalidDroidType();
                    Input = Console.ReadLine();
                 }
-                userInput = Input;
+                userInput = Input.ToLower();
                 Console.WriteLine("Your input '{0}' passed", userInput);
                 Console.WriteLine();
                 droidTypeValidation = true; 

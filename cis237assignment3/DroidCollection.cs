@@ -38,12 +38,15 @@ namespace cis237assignment3
         }
         public void CreateUtilityDroid()
         {
+            Console.WriteLine("You chose to creat a '{0}'","Utility Droid");
         }
         public void CreateJanitorDroid()
         {
+            Console.WriteLine("You chose to creat a '{0}'", "Janitor Droid");
         }
         public void CreateAstromechDroid()
         {
+            Console.WriteLine("You chose to creat a '{0}'", "Astromech Droid");
         }
 
         //----------
