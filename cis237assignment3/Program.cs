@@ -21,12 +21,13 @@ namespace cis237assignment3
             Protocol PDroid = new Protocol();
             Astromech ADroid = new Astromech();
 
-            string choice=uI.GetMainInput();
+            string choice;
+            
 
             //Prints main menu
             uI.PrintMain();
             //Acquires input for main menu.
-            uI.GetMainInput();
+            choice = uI.GetMainInput();
             //Switch statement for menu choices.
             while(choice!="3")
             {

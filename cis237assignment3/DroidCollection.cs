@@ -29,6 +29,12 @@ namespace cis237assignment3
         //----------
         public void CreateProtocolDroid()
         {
+            string[] pDroid = new string[5];
+            uI.UiHandlingCreateProtocolDroid(pDroid);
+            for(int i=0;i>5;i++)
+            {
+                Console.WriteLine(pDroid[i]);
+            }
         }
         public void CreateUtilityDroid()
         {
@@ -39,6 +45,7 @@ namespace cis237assignment3
         public void CreateAstromechDroid()
         {
         }
+
         //----------
         //Properties
         //----------

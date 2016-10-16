@@ -96,7 +96,7 @@ namespace cis237assignment3
         /// Method used to acquire user input to determine what droid type to create.
         /// </summary>
         public string GetDroidType()
-        {   //delcare bool as false to validate.
+        {   //declare bool as false to validate.
             droidTypeValidation = false;
 
             //loop while bool remains false.
@@ -107,7 +107,7 @@ namespace cis237assignment3
                 try
                 {
                     //Compares 'Input' to the droid types.
-                    if (Input.ToLower() == "protocol" && Input.ToLower() == "utility"
+                    if(Input.ToLower() == "protocol" && Input.ToLower() == "utility"
                         && Input.ToLower() == "janitor" && Input.ToLower() == "astromech")
                     {
                         //If 'Input' matches one of the droid types the switcher is called.
@@ -165,11 +165,12 @@ namespace cis237assignment3
             Console.WriteLine("The droid Number of Languages '{0}' is not valid.", Input);
             Console.WriteLine("Please enter a valid number for {0}.", "Number of Languages");
         }
-        public string[] UiHandlingCreateProtocolDroid()
+        public string[] UiHandlingCreateProtocolDroid(string [] PDroid)
         {
-            string[] pDroid=new string[8];
+            //string[] pDroid=new string[5];
+            string[] pDroid = PDroid;
             bool ValidProtocolInput = false;
-            while(!ValidProtocolInput)
+            while (!ValidProtocolInput)
             {
                 try
                 {
@@ -179,12 +180,12 @@ namespace cis237assignment3
                     Console.WriteLine("3) Durium--------500");
                     Console.WriteLine("4) Cosmosium--------1,000");
 
-                    userInput=Console.ReadLine();
+                    userInput = Console.ReadLine();
 
-                    if(userInput=="1")
+                    if (userInput == "1")
                     {
-                        pDroid[0]="Fragillium";
-                        pDroid[1]="200";
+                        pDroid[0] = "Fragillium";
+                        pDroid[1] = "200";
                     }
                     if (userInput == "2")
                     {
@@ -196,24 +197,23 @@ namespace cis237assignment3
                         pDroid[0] = "Durium";
                         pDroid[1] = "500";
                     }
-                    if(userInput=="4")
+                    if (userInput == "4")
                     {
-                        pDroid[0]="Cosmosium";
-                        pDroid[1]="1000";
+                        pDroid[0] = "Cosmosium";
+                        pDroid[1] = "1000";
                     }
-                    
                     try
                     {
                         Console.WriteLine("What color will the protocol Droid be?");
                         Console.WriteLine("1) White--------250");
                         Console.WriteLine("2) Black--------250");
 
-                        userInput=Console.ReadLine();
+                        userInput = Console.ReadLine();
 
-                        if(userInput=="1")
+                        if (userInput == "1")
                         {
-                            pDroid[2]="White";
-                            pDroid[3]="250";
+                            pDroid[2] = "White";
+                            pDroid[3] = "250";
                         }
                         if (userInput == "2")
                         {
@@ -225,14 +225,10 @@ namespace cis237assignment3
                             Console.WriteLine("How many languages do you want the Protocol Droid to have?");
 
                             userInput = Console.ReadLine();
-                            //if(input==aNumber)
-                            //{
-                            //  if(input>1 )
-                            //{
-                            //      return the number.
-                            //}
-                            //return the cost of the color..
-                            //}
+                            if (int.Parse(userInput) > 0)
+                            {
+                                pDroid[4] = userInput;
+                            }  
                         }
                         catch
                         {
@@ -250,11 +246,12 @@ namespace cis237assignment3
                 }
                 ValidProtocolInput = true;
             }
+            return pDroid;
         }
         //-----------------------
         //Properties
         //-----------------------
-        public string Input
+         string Input
         {
             get { return userInput; }
             set { userInput = value; }
