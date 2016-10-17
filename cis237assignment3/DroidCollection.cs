@@ -27,26 +27,27 @@ namespace cis237assignment3
         //----------
         //Methods
         //----------
-        public void CreateProtocolDroid()
+        public string[] CreateProtocolDroid()
         {
             string[] pDroid = new string[5];
             uI.UiHandlingCreateProtocolDroid(pDroid);
-            for(int i=0;i>5;i++)
+            foreach (string i in pDroid)
             {
-                Console.WriteLine(pDroid[i]);
+                Console.WriteLine(i);
             }
+            return pDroid;
         }
         public void CreateUtilityDroid()
         {
-            Console.WriteLine("You chose to creat a '{0}'","Utility Droid");
+            Console.WriteLine("You chose to create a '{0}'","Utility Droid");
         }
         public void CreateJanitorDroid()
         {
-            Console.WriteLine("You chose to creat a '{0}'", "Janitor Droid");
+            Console.WriteLine("You chose to create a '{0}'", "Janitor Droid");
         }
         public void CreateAstromechDroid()
         {
-            Console.WriteLine("You chose to creat a '{0}'", "Astromech Droid");
+            Console.WriteLine("You chose to create a '{0}'", "Astromech Droid");
         }
 
         //----------

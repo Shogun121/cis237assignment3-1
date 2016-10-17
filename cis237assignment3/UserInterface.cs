@@ -212,8 +212,7 @@ namespace cis237assignment3
                         Console.WriteLine("1) White--------250");
                         Console.WriteLine("2) Black--------250");
 
-                        userInput = Console.ReadLine();
-
+                        userInput = Console.ReadLine();                        
                         if (userInput == "1")
                         {
                             pDroid[2] = "White";
