@@ -83,4 +83,13 @@ namespace cis237assignment3
             
         }
     }
+    /*
+     * Finish Wiring the Base and Total Cost methods, ensure they print their results
+     * Build Functionality to actually CREATE droids.
+     *      If both go well then replicate and resolve differences for the other three.
+     * Code Print Droid List Method
+     * Fix Menu Hangs
+     * Add/Improve Documentation
+     * Clean Up Program
+     * Polish Program
 }
