@@ -21,8 +21,12 @@ namespace cis237assignment3
             Protocol PDroid = new Protocol();
             Astromech ADroid = new Astromech();
 
+            //storage variable
             string choice;
-            string[] pDroid=new string[5];
+
+            //arrays
+            string[] pDroid=new string[5];              //stores droid creation input.
+            Droid[] DroidCollection=new Droid[50];      //stores Droids
 
             //Prints main menu
             uI.PrintMain();
@@ -42,18 +46,12 @@ namespace cis237assignment3
                         //Add a Droid to the list.
                         Console.WriteLine("You have selected 'Add a Droid'");
                         choice = uI.GetDroidType().ToLower();
+                        //Switch statement for droid type
                         switch (choice)
-                        {
-                            
+                        {                           
                             case "protocol":
                                 DCollection.CreateProtocolDroid(pDroid);
-                                //foreach(string i in pDroid)
-                                //{
-                                //    Console.WriteLine(i);
-                                //}
-                                PDroid.CalculateBaseCost("protocol", pDroid[0], pDroid[2]);
-                                
-                                
+                                PDroid.CalculateBaseCost("protocol", pDroid[0], pDroid[2]);                              
                                 break;
                             case "utility":
                                 //call CreateUtilityDroid()
@@ -92,4 +90,5 @@ namespace cis237assignment3
      * Add/Improve Documentation
      * Clean Up Program
      * Polish Program
+     * */
 }

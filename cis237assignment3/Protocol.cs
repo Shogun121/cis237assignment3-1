@@ -41,10 +41,21 @@ namespace cis237assignment3
             TotalCost += _baseCost;
             //return base.CalculateTotalCost() + _totalCost;
         }
+        /// <summary>
+        /// Overrides Droid's method to calculate the cheapest protocol model creatable.
+        /// </summary>
+        /// <param name="Model"></param>
+        /// <param name="Material"></param>
+        /// <param name="Color"></param>
+        /// <returns></returns>
         public override decimal CalculateBaseCost(string Model, string Material, string Color)
         {
             return base.CalculateBaseCost(Model, Material, Color);   
         }
+        /// <summary>
+        /// Overrides the Droid method's return statement and adds class specific info.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return base.ToString() + Environment.NewLine +

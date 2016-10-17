@@ -73,7 +73,6 @@ namespace cis237assignment3
                 utilityAccum += armCost;
             }
             TotalCost += _baseCost;
-            //return base.CalculateTotalCost()+utilityAccum;
         }
         //-------------------
         //Properties

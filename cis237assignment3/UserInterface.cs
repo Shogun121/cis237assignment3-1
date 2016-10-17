@@ -118,20 +118,19 @@ namespace cis237assignment3
                    InvalidDroidType();
                    Input = Console.ReadLine();
                 }
+                //Stores the input in lower case to be returned.
                 userInput = Input.ToLower();
+
                 Console.WriteLine("Your input '{0}' passed", userInput);
                 Console.WriteLine();
+
+                //Data has been validated, bool is set to true. 
                 droidTypeValidation = true; 
-                //Data has been validated, bool is set to true.                            
+                                           
             }
             //If 'Input' matches one of the droid types the switcher is called.
             return userInput;
         }
-        /// <summary>
-        /// method used to switch through the droid types to 
-        /// correctly prompt the user to create a droid.
-        /// </summary>
-        
         /// <summary>
         /// method used to report incorrect droid types.
         /// </summary>
@@ -169,23 +168,32 @@ namespace cis237assignment3
             Console.WriteLine("The droid Number of Languages '{0}' is not valid.", Input);
             Console.WriteLine("Please enter a valid number for {0}.", "Number of Languages");
         }
+        /// <summary>
+        /// Method used to gather the information nneccessary to create a droid.
+        /// </summary>
+        /// <param name="PDroid"></param>
+        /// <returns></returns>
         public string[] UiHandlingCreateProtocolDroid(string [] PDroid)
         {
-            //string[] pDroid=new string[5];
+            //Declare local array
             string[] pDroid = PDroid;
+            //Data validation bool
             bool ValidProtocolInput = false;
             while (!ValidProtocolInput)
             {
                 try
                 {
+                    //Print the user's choices for material
                     Console.WriteLine("What material will the protocol Droid be made of?");
                     Console.WriteLine("1) Fragillium--------200");
                     Console.WriteLine("2) Okium--------300");
                     Console.WriteLine("3) Durium--------500");
                     Console.WriteLine("4) Cosmosium--------1,000");
 
+                    //Store user's input
                     userInput = Console.ReadLine();
 
+                    //write the input to the array
                     if (userInput == "1")
                     {
                         pDroid[0] = "Fragillium";
@@ -208,10 +216,12 @@ namespace cis237assignment3
                     }
                     try
                     {
+                        //Display user's choices for droid color.
                         Console.WriteLine("What color will the protocol Droid be?");
                         Console.WriteLine("1) White--------250");
                         Console.WriteLine("2) Black--------250");
 
+                        //store user's input
                         userInput = Console.ReadLine();                        
                         if (userInput == "1")
                         {
@@ -228,27 +238,33 @@ namespace cis237assignment3
                             Console.WriteLine("How many languages do you want the Protocol Droid to have?");
 
                             userInput = Console.ReadLine();
+                            //If the number of languages is an integer and is greater than 0...
                             if (int.Parse(userInput) > 0)
                             {
+                                //...store in the array.
                                 pDroid[4] = userInput;
                             }  
                         }
                         catch
                         {
+                            //Error message for incorrect language.
                             InvalidDroidNumberOfLanguages();
                         }
                     }
                     catch
                     {
+                        //Error message for incorrect Droid color.
                         InvalidDroidColor();
                     }
                 }
                 catch
                 {
+                    //Error message for incorrect Droid material.
                     InvalidDroidMaterial();
                 }
                 ValidProtocolInput = true;
             }
+            //return the array of input
             return pDroid;
         }
         //-----------------------

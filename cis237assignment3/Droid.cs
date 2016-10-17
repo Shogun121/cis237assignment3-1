@@ -19,17 +19,21 @@ namespace cis237assignment3
         protected string _material;       
         protected string _color;
 
+        //local variables for total cost.
         protected decimal _colorCost;
         protected decimal _materialCost;
 
+        //accumulators
         protected decimal _baseCost;
         protected decimal _totalCost;
 
+        //constants for material prices
         protected const decimal FragilliumCost = 200m;
         protected const decimal OkiumCost = 300m;
         protected const decimal DuriumCost = 500m;
         protected const decimal CosmosiumCost = 1000m;
 
+        //constants for color prices
         protected const decimal WhiteCost = 250m;
         protected const decimal BlackCost = 250m;
 
