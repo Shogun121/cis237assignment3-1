@@ -27,14 +27,15 @@ namespace cis237assignment3
         //----------
         //Methods
         //----------
-        public string[] CreateProtocolDroid()
+        public string[] CreateProtocolDroid(string[] PDroid)
         {
-            string[] pDroid = new string[5];
+            string[] pDroid = PDroid;
+            //string[] pDroid = new string[5];
             uI.UiHandlingCreateProtocolDroid(pDroid);
-            foreach (string i in pDroid)
-            {
-                Console.WriteLine(i);
-            }
+            //foreach (string i in pDroid)
+            //{
+            //    Console.WriteLine(i);
+            //}
             return pDroid;
         }
         public void CreateUtilityDroid()

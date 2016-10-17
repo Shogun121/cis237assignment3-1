@@ -41,6 +41,10 @@ namespace cis237assignment3
             TotalCost += _baseCost;
             //return base.CalculateTotalCost() + _totalCost;
         }
+        public override decimal CalculateBaseCost(string Model, string Material, string Color)
+        {
+            return base.CalculateBaseCost(Model, Material, Color);   
+        }
         public override string ToString()
         {
             return base.ToString() + Environment.NewLine +

@@ -22,7 +22,7 @@ namespace cis237assignment3
             Astromech ADroid = new Astromech();
 
             string choice;
-            
+            string[] pDroid=new string[5];
 
             //Prints main menu
             uI.PrintMain();
@@ -44,8 +44,16 @@ namespace cis237assignment3
                         choice = uI.GetDroidType().ToLower();
                         switch (choice)
                         {
+                            
                             case "protocol":
-                                DCollection.CreateProtocolDroid();
+                                DCollection.CreateProtocolDroid(pDroid);
+                                //foreach(string i in pDroid)
+                                //{
+                                //    Console.WriteLine(i);
+                                //}
+                                PDroid.CalculateBaseCost("protocol", pDroid[0], pDroid[2]);
+                                
+                                
                                 break;
                             case "utility":
                                 //call CreateUtilityDroid()

@@ -19,8 +19,19 @@ namespace cis237assignment3
         protected string _material;       
         protected string _color;
 
+        protected decimal _colorCost;
+        protected decimal _materialCost;
+
         protected decimal _baseCost;
         protected decimal _totalCost;
+
+        protected const decimal FragilliumCost = 200m;
+        protected const decimal OkiumCost = 300m;
+        protected const decimal DuriumCost = 500m;
+        protected const decimal CosmosiumCost = 1000m;
+
+        protected const decimal WhiteCost = 250m;
+        protected const decimal BlackCost = 250m;
 
         //------------------------------------
         //Constructor
@@ -47,20 +58,24 @@ namespace cis237assignment3
         /// <summary>
         /// method used to Calculate Total Cost of the Droid(s).
         /// </summary>
-        public virtual  void CalculateTotalCost()
+        public virtual  void CalculateTotalCost(decimal MaterialCost,decimal ColorCost)
         {
-            TotalCost += _baseCost;
-           //return  _baseCost = _totalCost;
+            _materialCost = MaterialCost;
+            _colorCost = ColorCost;
+            TotalCost = (_materialCost + _colorCost);
         }
-
         /// <summary>
         /// A method to calculate the lowest possible cost of a droid.
         /// </summary>
         /// <param name="Model"></param>
         /// <param name="Material"></param>
         /// <param name="Color"></param>
-        public virtual void CalculateBaseCost(string Model,string Material,string Color){}
-
+        public virtual decimal CalculateBaseCost(string Model,string Material,string Color)
+        {   //cannot account for droid type cost in Droid class.
+            _baseCost = FragilliumCost + WhiteCost;
+            Console.WriteLine("The base cost for a droid is '{0}'",_baseCost);
+            return TotalCost = _baseCost;
+        }
         /// <summary>
         /// Method used to print the total cost to the console of the droid.
         /// </summary>
